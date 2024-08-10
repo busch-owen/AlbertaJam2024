@@ -103,12 +103,15 @@ public class WiresHandler : MonoBehaviour
             }
             else
             {
+                _gameManager.CheckWireCompletion();
+                if (!_selectedWire) return;
                 _selectedWire.enabled = false;
                 _selectedWire = null;
             }
         }
         else
         {
+            _gameManager.CheckWireCompletion();
             if (!_selectedWire) return;
             _selectedWire.enabled = false;
             _selectedWire = null;
