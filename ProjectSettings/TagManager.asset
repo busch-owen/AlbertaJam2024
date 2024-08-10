@@ -18,11 +18,11 @@ TagManager:
   - UI
   - LeftConnector
   - RightConnector
+  - Handle
   - Ground
-  - BossPlatform
-  - Projectile
   - Enemy
-  - 
+  - Projectile
+  - BossPlatform
   - 
   - 
   - 

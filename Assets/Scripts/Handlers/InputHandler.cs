@@ -5,10 +5,12 @@ public class InputHandler : MonoBehaviour
     private PlayerInput _playerInput;
 
     private WiresHandler _wiresHandler;
+    private PanelOpener _panelOpener;
 
     private void OnEnable()
     {
-        _wiresHandler = FindObjectOfType<WiresHandler>();
+        _wiresHandler ??= FindObjectOfType<WiresHandler>();
+        _panelOpener ??= FindObjectOfType<PanelOpener>();
 
         if (_playerInput == null)
         {
@@ -17,9 +19,11 @@ public class InputHandler : MonoBehaviour
                 i => _wiresHandler.UpdateMousePos(i.ReadValue<Vector2>());
             _playerInput.MinigameInteractions.MouseClick.started += i => _wiresHandler.CheckConnector();
             _playerInput.MinigameInteractions.MouseClick.canceled += i => _wiresHandler.DropWire();
+            _playerInput.MinigameInteractions.MousePosition.performed += i => _panelOpener.UpdateMousePosition(i.ReadValue<Vector2>());
+            _playerInput.MinigameInteractions.MouseClick.started += i => _panelOpener.ShootRayAtDoors();
         }
 
-        EnableInput();
+        //EnableInput();
     }
 
     public void DisableInput()
