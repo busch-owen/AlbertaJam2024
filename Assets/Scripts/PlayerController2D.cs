@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController2D : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerController2D : MonoBehaviour
     public float currentHealth;
     private EnergyCounter _energyCounter;
     [SerializeField] private CharacterStatsSO characterStats;
+    [SerializeField]protected string currentScene;
 
     private void Update()
     {
@@ -35,6 +37,11 @@ public class PlayerController2D : MonoBehaviour
         if (_isRight && _horizontal < 0f)
         {
             Flip();
+        }
+
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene(currentScene);
         }
     }
 
