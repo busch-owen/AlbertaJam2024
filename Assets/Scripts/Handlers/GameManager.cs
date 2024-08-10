@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private WireConnector[] connectors;
     [SerializeField] private WireConnector[] rightConnectors;
 
+    [SerializeField] private Fuse[] fuses;
+
     private List<CorrespondingColor> availableColors = new();
     
     [SerializeField] private UnityEvent wiresCompleted;
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         RandomizeWires();
+        RandomizeBrokenFuse();
     }
 
     public void CheckWireCompletion()
@@ -52,5 +55,16 @@ public class GameManager : MonoBehaviour
             connector.ChangeColor(availableColors[randColor]);
             availableColors.Remove(availableColors[randColor]);
         }
+    }
+    
+    public void CheckFuseCompletion()
+    {
+        //Check for fuse completion here
+    }
+
+    public void RandomizeBrokenFuse()
+    {
+        var randFuse = Random.Range(0, fuses.Length);
+        fuses[randFuse].BreakFuse();
     }
 }

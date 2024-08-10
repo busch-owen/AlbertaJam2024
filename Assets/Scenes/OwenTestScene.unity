@@ -245,6 +245,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3D Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 1319177034542069382, guid: 2893ca185a53c4c48a20c5022dc34906,
+        type: 3}
+      propertyPath: swapTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917360940234448952, guid: 2893ca185a53c4c48a20c5022dc34906,
+        type: 3}
+      propertyPath: swapTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010423576255864642, guid: 2893ca185a53c4c48a20c5022dc34906,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 3679892614068450142, guid: 2893ca185a53c4c48a20c5022dc34906,
         type: 3}
       propertyPath: sharedProfile
@@ -300,6 +315,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414741267071628752, guid: 2893ca185a53c4c48a20c5022dc34906,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434102352017328835, guid: 2893ca185a53c4c48a20c5022dc34906,
+        type: 3}
+      propertyPath: swapTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216962911616317351, guid: 2893ca185a53c4c48a20c5022dc34906,
+        type: 3}
+      propertyPath: m_Name
+      value: MiddleFuse
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
