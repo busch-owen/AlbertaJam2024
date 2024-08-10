@@ -13,12 +13,14 @@ public class LightFlicker : MonoBehaviour
     [SerializeField] private Light ScreenLight;
     [SerializeField] private float OnIntensity, OffIntesity;
     [SerializeField] private int NumberOfFlickers;
+    private Screen _screen;
     
     
 
     private void Start()
     {
         _eventManager = FindObjectOfType<PlayerEventManager>();
+        _screen = FindObjectOfType<Screen>();
         _eventManager.PlayerHit += LightFLicker;
         _eventManager.PlayerDeath += LightsOff;
     }
@@ -35,13 +37,19 @@ public class LightFlicker : MonoBehaviour
     public void LightsOff()
     {
         _light.intensity = 0;
-        Invoke("ScreenOff", 1.0f);
+        Invoke("TurnOff",1.0f);
+        Invoke("ScreenOff", 1.5f);
     }
 
     public void ScreenOff()
     {
         if(ScreenLight)
             ScreenLight.intensity = 0.5f;
+    }
+
+    public void TurnOff()
+    {
+        _screen.gameObject.SetActive(false);
     }
 
     IEnumerator FlickerLights()
