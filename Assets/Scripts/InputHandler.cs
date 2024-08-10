@@ -19,7 +19,7 @@ public class InputHandler : MonoBehaviour
             _playerInput.MinigameInteractions.MouseClick.canceled += i => _wiresHandler.DropWire();
         }
 
-        EnableInput();
+        //EnableInput();
     }
 
     public void DisableInput()

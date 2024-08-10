@@ -12,8 +12,13 @@ public class WiresHandler : MonoBehaviour
     private Vector2 _mousePosition;
 
     private bool _pullingWire;
+    
+    private WireConnector _startConnector;
+    private WireConnector _endConnector;
 
     [SerializeField] private LineRenderer topWire, middleWire, bottomWire;
+
+    private LineRenderer _selectedWire;
 
     private void Awake()
     {
@@ -30,20 +35,10 @@ public class WiresHandler : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(_camera.ScreenPointToRay(_mousePosition), out hit, Mathf.Infinity))
         {
-            if (topWire.enabled)
-            {
-                topWire.SetPosition(1, hit.point);
-            }
-            else if (middleWire.enabled)
-            {
-                middleWire.SetPosition(1, hit.point);
-            }
-            else
-            {
-                bottomWire.SetPosition(1, hit.point);
-            }
+            if (_startConnector.ConnectedCorrectly) return;
+            _selectedWire.SetPosition(1, hit.point);
         }
-        
+
     }
     
     public void CheckConnector()
@@ -51,11 +46,18 @@ public class WiresHandler : MonoBehaviour
         RaycastHit hit;
         if (!Physics.Raycast(_camera.ScreenPointToRay(_mousePosition), out hit, Mathf.Infinity,_leftConnectorLayer)) return;
         _pullingWire = true;
+        
+        _startConnector = hit.collider.GetComponent<WireConnector>();
+        
+        if(!_startConnector) return;
+        
+        if (_startConnector.ConnectedCorrectly) return;
+        
         switch (hit.collider.tag)
         {
             case "Top":
             {
-                Debug.Log("Hit Top Connector");
+                _selectedWire = topWire;
                 topWire.SetPosition(0, hit.transform.position);
                 topWire.SetPosition(1, hit.point);
                 topWire.enabled = true;
@@ -63,7 +65,7 @@ public class WiresHandler : MonoBehaviour
             }
             case "Middle":
             {
-                Debug.Log("Hit Middle Connector");
+                _selectedWire = middleWire;
                 middleWire.SetPosition(0, hit.transform.position);
                 middleWire.SetPosition(1, hit.point);
                 middleWire.enabled = true;
@@ -71,7 +73,7 @@ public class WiresHandler : MonoBehaviour
             }
             case "Bottom":
             {
-                Debug.Log("Hit Bottom Connector");
+                _selectedWire = bottomWire;
                 bottomWire.SetPosition(0, hit.transform.position);
                 bottomWire.SetPosition(1, hit.point);
                 bottomWire.enabled = true;
@@ -83,14 +85,29 @@ public class WiresHandler : MonoBehaviour
     public void DropWire()
     {
         _pullingWire = false;
-        DisableWires();
-        //Also check if connector is correct
-    }
-
-    private void DisableWires()
-    {
-        topWire.enabled = false;
-        middleWire.enabled = false;
-        bottomWire.enabled = false;
+        RaycastHit hit;
+        if(!_startConnector) return; 
+        if (Physics.Raycast(_camera.ScreenPointToRay(_mousePosition), out hit, Mathf.Infinity, _rightConnectorLayer))
+        {
+            _endConnector = hit.collider.GetComponent<WireConnector>();
+            if (_startConnector.wireColor == _endConnector.wireColor)
+            {
+                //Do something to tell the game that this wire is connected
+                _startConnector.ConnectWire();
+                _endConnector.ConnectWire();
+                _selectedWire = null;
+            }
+            else
+            {
+                _selectedWire.enabled = false;
+                _selectedWire = null;
+            }
+        }
+        else
+        {
+            if (!_selectedWire) return;
+            _selectedWire.enabled = false;
+            _selectedWire = null;
+        }
     }
 }

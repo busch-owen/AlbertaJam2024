@@ -179,6 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 20091598}
   - component: {fileID: 20091599}
+  - component: {fileID: 20091600}
   m_Layer: 6
   m_Name: LeftBottomCollider
   m_TagString: Bottom
@@ -222,6 +223,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.04
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &20091600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20091597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1c7135a0c58b644877519e4b092213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <wireColor>k__BackingField: 2
 --- !u!1 &31010167
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +383,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 152998118}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: EnableInput
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1519,6 +1545,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 152998118}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: EnableInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &814447626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,6 +2086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1194566995}
   - component: {fileID: 1194566996}
+  - component: {fileID: 1194566997}
   m_Layer: 7
   m_Name: RightTopCollider
   m_TagString: Top
@@ -2091,6 +2130,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.04
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1194566997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194566994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1c7135a0c58b644877519e4b092213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <wireColor>k__BackingField: 0
 --- !u!1001 &1245466916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2293,6 +2345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1368044046}
   - component: {fileID: 1368044047}
+  - component: {fileID: 1368044048}
   m_Layer: 7
   m_Name: RightMiddleCollider
   m_TagString: Middle
@@ -2336,6 +2389,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.04
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1368044048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368044045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1c7135a0c58b644877519e4b092213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <wireColor>k__BackingField: 1
 --- !u!1 &1370406880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2454,6 +2520,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 152998118}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: DisableInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1370406883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2514,6 +2592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1674954312}
   - component: {fileID: 1674954313}
+  - component: {fileID: 1674954314}
   m_Layer: 6
   m_Name: LeftTopCollider
   m_TagString: Top
@@ -2557,6 +2636,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.04
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1674954314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674954311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1c7135a0c58b644877519e4b092213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <wireColor>k__BackingField: 0
 --- !u!1 &1679586007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,6 +2933,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 152998118}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: DisableInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1723691320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2889,6 +2993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1741363818}
   - component: {fileID: 1741363819}
+  - component: {fileID: 1741363820}
   m_Layer: 6
   m_Name: LeftMiddleCollider
   m_TagString: Middle
@@ -2932,6 +3037,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.04
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1741363820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741363817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1c7135a0c58b644877519e4b092213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <wireColor>k__BackingField: 1
 --- !u!4 &1756433023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 01532a05246bb4e4e8c1a7fed9b635d9,
@@ -3740,6 +3858,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 616657254}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2056508634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2056508636}
+  - component: {fileID: 2056508635}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2056508635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056508634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c280d1cb9241c5458b8adafe11fc4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2056508636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056508634}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2125217283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3901,6 +4063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2145595270}
   - component: {fileID: 2145595271}
+  - component: {fileID: 2145595272}
   m_Layer: 7
   m_Name: RightBottomCollider
   m_TagString: Bottom
@@ -3944,6 +4107,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.04
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2145595272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145595269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1c7135a0c58b644877519e4b092213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <wireColor>k__BackingField: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3955,3 +4131,4 @@ SceneRoots:
   - {fileID: 556576212}
   - {fileID: 573870816}
   - {fileID: 152998119}
+  - {fileID: 2056508636}
