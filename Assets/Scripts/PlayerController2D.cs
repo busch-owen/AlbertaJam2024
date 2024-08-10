@@ -1,33 +1,40 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
+public delegate void Player();
 
 public class PlayerController2D : MonoBehaviour
 {
     private Rigidbody2D _rb;
-    private PlayerController2D _playerController2D;
-    private Transform _startPos;
     [SerializeField] private float speed;
     [SerializeField] private float friction;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float _groundCheckDistance;
-    private Transform _groundCheck;
+    [SerializeField] private Transform _groundCheck;
     [SerializeField]private LayerMask _layerMask;
     private float _horizontal;
+    private float _vertical;
     private bool _isRight;
-    
-
-    private void Awake()
-    {
-        _playerController2D = gameObject.AddComponent<PlayerController2D>();
-        _rb = gameObject.AddComponent<Rigidbody2D>();
-        _startPos = FindObjectOfType<startPos>().transform ;
-    }
+    private Projectile _projectile;
+    public float currentHealth;
+    private EnergyCounter _energyCounter;
+    [SerializeField] private CharacterStatsSO characterStats;
+    [SerializeField]protected string currentScene;
+    private PlayerEventManager _eventManager;
+    private LightFlicker _lightFlicker;
+    private bool _isDead;
 
     private void Update()
     {
+
+        _rb.velocity = new Vector2(_horizontal * speed, _rb.velocity.y);
         if (_isRight && _horizontal > 0f)
         {
             Flip();
@@ -36,7 +43,31 @@ public class PlayerController2D : MonoBehaviour
         {
             Flip();
         }
+
+        if (currentHealth <= 0)
+        {
+            _isDead = true;
+            _eventManager.RunPlayerDeath();
+            Invoke("SceneChange", 2.0f);
+            //SceneManager.LoadScene(currentScene);
+        }
     }
+
+    public void SceneChange()
+    {
+        SceneManager.LoadScene(currentScene);
+    }
+
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+        currentHealth = characterStats.Health;
+        _energyCounter = FindObjectOfType<EnergyCounter>();
+        _energyCounter.RecalculateEnergy((int)currentHealth);
+        _eventManager = FindObjectOfType<PlayerEventManager>();
+        _lightFlicker = FindObjectOfType<LightFlicker>();
+    }
+
 
     private bool IsGrounded()
     {
@@ -66,7 +97,26 @@ public class PlayerController2D : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        Debug.Log("move");
         _horizontal = context.ReadValue<Vector2>().x;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("EnemyProjectile"))
+        {
+            if (!_lightFlicker.LightsOn)
+            {
+                _lightFlicker.enabled = true;
+            }
+            _projectile = other.GetComponent<Projectile>();
+            currentHealth -=_projectile._damage;
+            _energyCounter.RecalculateEnergy((int)currentHealth);
+            if (!_isDead)
+            {
+                _eventManager.RunPlayerHit();
+            }
+        }
     }
     
     
