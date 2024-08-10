@@ -245,6 +245,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3D Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 3679892614068450142, guid: 2893ca185a53c4c48a20c5022dc34906,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: d6c03a97fe1a78e48a54062bc6374d06,
+        type: 2}
     - target: {fileID: 4359334026732946767, guid: 2893ca185a53c4c48a20c5022dc34906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -584,6 +590,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6589539295471165705, guid: 23d06e6f058aeb84a9858884eec7c4b7,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7105507247047694816, guid: 23d06e6f058aeb84a9858884eec7c4b7,
         type: 3}
       propertyPath: m_LocalPosition.x
