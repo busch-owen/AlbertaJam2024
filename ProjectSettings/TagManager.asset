@@ -7,8 +7,6 @@ TagManager:
   - Top
   - Middle
   - Bottom
-  - Enemy
-  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -18,10 +16,10 @@ TagManager:
   - UI
   - LeftConnector
   - RightConnector
-  - Ground
-  - BossPlatform
-  - Projectile
-  - Enemy
+  - Handle
+  - 
+  - 
+  - 
   - 
   - 
   - 
