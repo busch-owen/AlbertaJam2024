@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,10 @@ public class PlayerController2D : MonoBehaviour
     private float _horizontal;
     private float _vertical;
     private bool _isRight;
+    private Projectile _projectile;
+    public float currentHealth;
+    private EnergyCounter _energyCounter;
+    [SerializeField] private CharacterStatsSO characterStats;
 
     private void Update()
     {
@@ -36,6 +41,9 @@ public class PlayerController2D : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        currentHealth = characterStats.Health;
+        _energyCounter = FindObjectOfType<EnergyCounter>();
+        _energyCounter.RecalculateEnergy((int)currentHealth);
     }
 
 
@@ -69,6 +77,16 @@ public class PlayerController2D : MonoBehaviour
     {
         Debug.Log("move");
         _horizontal = context.ReadValue<Vector2>().x;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("EnemyProjectile"))
+        {
+            _projectile = other.GetComponent<Projectile>();
+            currentHealth -=_projectile._damage;
+            _energyCounter.RecalculateEnergy((int)currentHealth);
+        }
     }
     
     
