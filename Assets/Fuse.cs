@@ -12,6 +12,8 @@ public class Fuse : MonoBehaviour
     private static readonly int GoodFuse = Animator.StringToHash("GoodFuse");
 
     private InputHandler _inputHandler;
+    
+    private GameManager _gameManager;
 
     public bool IsBroken { get; private set; }
 
@@ -19,17 +21,21 @@ public class Fuse : MonoBehaviour
     {
         _anim = GetComponent<Animator>();
         _inputHandler = FindObjectOfType<InputHandler>();
+        _gameManager = FindObjectOfType<GameManager>();
         _waitForSwapTime = new WaitForSeconds(swapTime);
+        _anim.SetBool(GoodFuse, true);
     }
 
     public void BreakFuse()
     {
         IsBroken = true;
+        _anim.SetBool(GoodFuse, false);
     }
 
     public void Swap()
     {
-        StartCoroutine(SwapFuse());
+        if(IsBroken)
+            StartCoroutine(SwapFuse());
     }
 
     private IEnumerator SwapFuse()
@@ -39,6 +45,6 @@ public class Fuse : MonoBehaviour
         _inputHandler.DisableInput();
         yield return _waitForSwapTime;
         IsBroken = false;
-        _inputHandler.EnableInput();
+        _gameManager.CheckFuseCompletion();
     }
 }

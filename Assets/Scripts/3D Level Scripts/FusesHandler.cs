@@ -8,12 +8,12 @@ public class FusesHandler : MonoBehaviour
     private Camera _camera;
     private LayerMask _fusesLayer;
     private Vector2 _mousePosition;
-    private GameManager _gameManager;
+    
 
     private void Awake()
     {
         _camera = Camera.main;
-        _gameManager = FindObjectOfType<GameManager>();
+        
         _fusesLayer = LayerMask.GetMask("Fuse");
     }
     
