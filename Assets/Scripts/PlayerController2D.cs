@@ -1,33 +1,28 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController2D : MonoBehaviour
 {
     private Rigidbody2D _rb;
-    private PlayerController2D _playerController2D;
-    private Transform _startPos;
     [SerializeField] private float speed;
     [SerializeField] private float friction;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float _groundCheckDistance;
-    private Transform _groundCheck;
+    [SerializeField] private Transform _groundCheck;
     [SerializeField]private LayerMask _layerMask;
     private float _horizontal;
+    private float _vertical;
     private bool _isRight;
-    
-
-    private void Awake()
-    {
-        _playerController2D = gameObject.AddComponent<PlayerController2D>();
-        _rb = gameObject.AddComponent<Rigidbody2D>();
-        _startPos = FindObjectOfType<startPos>().transform ;
-    }
 
     private void Update()
     {
+
+        _rb.velocity = new Vector2(_horizontal * speed, _rb.velocity.y);
         if (_isRight && _horizontal > 0f)
         {
             Flip();
@@ -37,6 +32,12 @@ public class PlayerController2D : MonoBehaviour
             Flip();
         }
     }
+
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
+
 
     private bool IsGrounded()
     {
@@ -66,6 +67,7 @@ public class PlayerController2D : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        Debug.Log("move");
         _horizontal = context.ReadValue<Vector2>().x;
     }
     

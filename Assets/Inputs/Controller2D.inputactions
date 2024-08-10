@@ -1,5 +1,5 @@
 {
-    "name": "2D Controller",
+    "name": "Controller2D",
     "maps": [
         {
             "name": "2D Movement",
@@ -13,20 +13,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Jump",
+                    "type": "PassThrough",
+                    "id": "1c5552d8-8c64-4e84-b42f-f5ab242b0ef9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "1c8ccce9-fdd7-414b-a137-709a938d2c84",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "Wasd",
                     "id": "1397c6e9-a03c-4c34-8b5e-7a488d689fd8",
@@ -81,6 +79,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2e3b598e-cc80-45d2-a7e6-878aa27f1831",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
