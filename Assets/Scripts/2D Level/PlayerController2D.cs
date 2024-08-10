@@ -61,11 +61,15 @@ public class PlayerController2D : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _eventManager = FindObjectOfType<PlayerEventManager>();
+        _lightFlicker = FindObjectOfType<LightFlicker>();
+    }
+
+    private void Awake()
+    {
         currentHealth = characterStats.Health;
         _energyCounter = FindObjectOfType<EnergyCounter>();
         _energyCounter.RecalculateEnergy((int)currentHealth);
-        _eventManager = FindObjectOfType<PlayerEventManager>();
-        _lightFlicker = FindObjectOfType<LightFlicker>();
     }
 
 
