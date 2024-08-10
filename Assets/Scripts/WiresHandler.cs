@@ -93,12 +93,12 @@ public class WiresHandler : MonoBehaviour
         if (Physics.Raycast(_camera.ScreenPointToRay(_mousePosition), out hit, Mathf.Infinity, _rightConnectorLayer))
         {
             _endConnector = hit.collider.GetComponent<WireConnector>();
-            if (_startConnector.wireColor == _endConnector.wireColor)
+            if (_startConnector.WireColor == _endConnector.WireColor)
             {
                 //Do something to tell the game that this wire is connected
                 _startConnector.ConnectWire();
                 _endConnector.ConnectWire();
-                if(_gameManager.AllWiresConnected()) Debug.Log("all wires connected correctly");
+                _gameManager.CheckWireCompletion();
                 _selectedWire = null;
             }
             else
