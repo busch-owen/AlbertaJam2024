@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class PlayerEventManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void RunPlayerDeath()
     {
-        
+        InvokePlayerDeath();
     }
 
-    // Update is called once per frame
-    void Update()
+    public event Player PlayerDeath;
+
+    protected virtual void InvokePlayerDeath()
     {
-        
+        PlayerDeath?.Invoke();
+    }
+
+    public event Player PlayerHit;
+
+    public void RunPlayerHit()
+    {
+        InvokePlayerHit();
+    }
+
+    protected virtual void InvokePlayerHit()
+    {
+        PlayerHit?.Invoke();
     }
 }

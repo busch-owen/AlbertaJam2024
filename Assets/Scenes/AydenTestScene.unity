@@ -155,9 +155,6 @@ Transform:
   m_Children:
   - {fileID: 330585546}
   - {fileID: 832575519}
-  - {fileID: 1926697062}
-  - {fileID: 285431515}
-  - {fileID: 346999069}
   - {fileID: 136061685}
   - {fileID: 1991920362}
   - {fileID: 918769067}
@@ -719,6 +716,7 @@ GameObject:
   - component: {fileID: 285431515}
   - component: {fileID: 285431517}
   - component: {fileID: 285431516}
+  - component: {fileID: 285431518}
   m_Layer: 0
   m_Name: SpotLight (3)
   m_TagString: Untagged
@@ -735,11 +733,11 @@ Transform:
   m_GameObject: {fileID: 285431514}
   serializedVersion: 2
   m_LocalRotation: {x: 0.18813314, y: -0.0023241877, z: -0.00950148, w: 0.9820948}
-  m_LocalPosition: {x: -0.01, y: 3.03, z: -0.43}
+  m_LocalPosition: {x: 0.42907485, y: 1.8064897, z: -6.36338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 13972436}
+  m_Father: {fileID: 1165124254}
   m_LocalEulerAnglesHint: {x: 21.684, y: -0.502, z: -1.205}
 --- !u!114 &285431516
 MonoBehaviour:
@@ -826,6 +824,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &285431518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285431514}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2c42791591e8c49943291d9e72e178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightsOn: 1
+  _gameObjects: {fileID: 0}
+  FlickerSpeed: 0.07
+  _light: {fileID: 285431517}
+  ScreenLight: {fileID: 0}
+  OnIntensity: 10
+  OffIntesity: 8
+  NumberOfFlickers: 2
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1014,7 @@ GameObject:
   - component: {fileID: 346999069}
   - component: {fileID: 346999071}
   - component: {fileID: 346999070}
+  - component: {fileID: 346999072}
   m_Layer: 0
   m_Name: SpotLight (2)
   m_TagString: Untagged
@@ -1012,11 +1031,11 @@ Transform:
   m_GameObject: {fileID: 346999068}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2722548, y: 0.5737931, z: -0.19091406, w: 0.74845886}
-  m_LocalPosition: {x: -4.048, y: 4.76, z: 2.722}
+  m_LocalPosition: {x: -3.608925, y: 3.53649, z: -3.2113802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 13972436}
+  m_Father: {fileID: 1165124254}
   m_LocalEulerAnglesHint: {x: 38.802, y: 75.64, z: 1.96}
 --- !u!114 &346999070
 MonoBehaviour:
@@ -1103,6 +1122,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &346999072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346999068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2c42791591e8c49943291d9e72e178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightsOn: 1
+  _gameObjects: {fileID: 0}
+  FlickerSpeed: 0.07
+  _light: {fileID: 346999071}
+  ScreenLight: {fileID: 0}
+  OnIntensity: 22.7
+  OffIntesity: 15
+  NumberOfFlickers: 2
 --- !u!1001 &399717234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2245,6 +2284,40 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01532a05246bb4e4e8c1a7fed9b635d9, type: 3}
+--- !u!1 &1165124252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1165124254}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1165124254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165124252}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.43907484, y: 1.2235103, z: 5.93338}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1926697062}
+  - {fileID: 285431515}
+  - {fileID: 346999069}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1185605251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2741,6 +2814,50 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.04
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1369601596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1369601598}
+  - component: {fileID: 1369601597}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1369601597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369601596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c840cfce9d6c3d34ab770f654423e250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1369601598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369601596}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.43907484, y: 1.2235103, z: 5.93338}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370406880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,6 +4085,7 @@ GameObject:
   - component: {fileID: 1926697062}
   - component: {fileID: 1926697061}
   - component: {fileID: 1926697060}
+  - component: {fileID: 1926697063}
   m_Layer: 0
   m_Name: SpotLight (1)
   m_TagString: Untagged
@@ -4069,12 +4187,32 @@ Transform:
   m_GameObject: {fileID: 1926697059}
   serializedVersion: 2
   m_LocalRotation: {x: 0.30401033, y: -0.571922, z: 0.22636093, w: 0.72749144}
-  m_LocalPosition: {x: 3.93, y: 4.53, z: 2.86}
+  m_LocalPosition: {x: 4.369075, y: 3.30649, z: -3.0733802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 13972436}
+  m_Father: {fileID: 1165124254}
   m_LocalEulerAnglesHint: {x: 44.527, y: -76.951, z: -1.478}
+--- !u!114 &1926697063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926697059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2c42791591e8c49943291d9e72e178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightsOn: 1
+  _gameObjects: {fileID: 0}
+  FlickerSpeed: 0.07
+  _light: {fileID: 1926697061}
+  ScreenLight: {fileID: 285431517}
+  OnIntensity: 22.7
+  OffIntesity: 15
+  NumberOfFlickers: 2
 --- !u!4 &1991920362 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 55d2a1304c8a9bd4e844c65a20c8d9e0,
@@ -5016,3 +5154,5 @@ SceneRoots:
   - {fileID: 556576212}
   - {fileID: 573870816}
   - {fileID: 237706103}
+  - {fileID: 1165124254}
+  - {fileID: 1369601598}

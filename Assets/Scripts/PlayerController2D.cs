@@ -8,6 +8,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+public delegate void Player();
+
 public class PlayerController2D : MonoBehaviour
 {
     private Rigidbody2D _rb;
@@ -25,6 +27,9 @@ public class PlayerController2D : MonoBehaviour
     private EnergyCounter _energyCounter;
     [SerializeField] private CharacterStatsSO characterStats;
     [SerializeField]protected string currentScene;
+    private PlayerEventManager _eventManager;
+    private LightFlicker _lightFlicker;
+    private bool _isDead;
 
     private void Update()
     {
@@ -41,8 +46,16 @@ public class PlayerController2D : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene(currentScene);
+            _isDead = true;
+            _eventManager.RunPlayerDeath();
+            Invoke("SceneChange", 2.0f);
+            //SceneManager.LoadScene(currentScene);
         }
+    }
+
+    public void SceneChange()
+    {
+        SceneManager.LoadScene(currentScene);
     }
 
     private void Start()
@@ -51,6 +64,8 @@ public class PlayerController2D : MonoBehaviour
         currentHealth = characterStats.Health;
         _energyCounter = FindObjectOfType<EnergyCounter>();
         _energyCounter.RecalculateEnergy((int)currentHealth);
+        _eventManager = FindObjectOfType<PlayerEventManager>();
+        _lightFlicker = FindObjectOfType<LightFlicker>();
     }
 
 
@@ -90,9 +105,17 @@ public class PlayerController2D : MonoBehaviour
     {
         if (other.CompareTag("EnemyProjectile"))
         {
+            if (!_lightFlicker.LightsOn)
+            {
+                _lightFlicker.enabled = true;
+            }
             _projectile = other.GetComponent<Projectile>();
             currentHealth -=_projectile._damage;
             _energyCounter.RecalculateEnergy((int)currentHealth);
+            if (!_isDead)
+            {
+                _eventManager.RunPlayerHit();
+            }
         }
     }
     
