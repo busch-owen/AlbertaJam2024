@@ -16,6 +16,8 @@ public class WiresHandler : MonoBehaviour
     private WireConnector _startConnector;
     private WireConnector _endConnector;
 
+    private GameManager _gameManager;
+
     [SerializeField] private LineRenderer topWire, middleWire, bottomWire;
 
     private LineRenderer _selectedWire;
@@ -23,6 +25,7 @@ public class WiresHandler : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
+        _gameManager = FindObjectOfType<GameManager>();
         _leftConnectorLayer = LayerMask.GetMask("LeftConnector");
         _rightConnectorLayer = LayerMask.GetMask("RightConnector");
     }
@@ -95,6 +98,7 @@ public class WiresHandler : MonoBehaviour
                 //Do something to tell the game that this wire is connected
                 _startConnector.ConnectWire();
                 _endConnector.ConnectWire();
+                if(_gameManager.AllWiresConnected()) Debug.Log("all wires connected correctly");
                 _selectedWire = null;
             }
             else

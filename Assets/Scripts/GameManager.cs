@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private WireConnector[] connectors;
 
-    // Update is called once per frame
-    void Update()
+    public bool AllWiresConnected()
     {
-        
+        var connectorsConnected = connectors.Count(connector => connector.ConnectedCorrectly);
+
+        return connectorsConnected == connectors.Length;
     }
 }

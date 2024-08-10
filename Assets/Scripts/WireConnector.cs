@@ -17,4 +17,9 @@ public class WireConnector : MonoBehaviour
     {
         ConnectedCorrectly = true;
     }
+
+    public void ResetConnections()
+    {
+        ConnectedCorrectly = false;
+    }
 }
