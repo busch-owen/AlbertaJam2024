@@ -30,6 +30,7 @@ public class PlayerController2D : MonoBehaviour
     private PlayerEventManager _eventManager;
     private LightFlicker _lightFlicker;
     private bool _isDead;
+    private bool _sfxHack = false;
 
     private void Update()
     {
@@ -48,6 +49,7 @@ public class PlayerController2D : MonoBehaviour
         {
             _isDead = true;
             _eventManager.RunPlayerDeath();
+            AudioManager.Instance.PlaySFX("sMeow");
             Invoke("SceneChange", 2.0f);
         }
     }
