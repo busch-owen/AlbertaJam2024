@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5538506498616205082}
   - component: {fileID: 3884766144173135608}
   - component: {fileID: 7187881132783461987}
+  - component: {fileID: 1589908576104241944}
   m_Layer: 11
   m_Name: 2DEnemy
   m_TagString: Enemy
@@ -220,6 +221,27 @@ MonoBehaviour:
   _moveSpeed: 0
   _speedRight: 1
   _speedLeft: 8
+--- !u!95 &1589908576104241944
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4052942800104447000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 176e27bb40d595a41ad579d78ee4c117, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6443687951117076814
 GameObject:
   m_ObjectHideFlags: 0
