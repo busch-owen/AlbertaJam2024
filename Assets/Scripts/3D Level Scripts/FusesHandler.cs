@@ -9,7 +9,8 @@ public class FusesHandler : MonoBehaviour
     private LayerMask _fusesLayer, _panelLayer;
     private Vector2 _mousePosition;
     
-
+    [field: SerializeField] public ParticleSystem Sparks { get; private set; }
+    
     private void Awake()
     {
         _camera = Camera.main;
