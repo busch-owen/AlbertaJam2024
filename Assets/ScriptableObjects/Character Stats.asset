@@ -12,14 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889238dfd1128a642920c6f820c8d11a, type: 3}
   m_Name: Character Stats
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 99
-  <Speed>k__BackingField: 0
-  <StillJumpHeight>k__BackingField: 0
-  <MovingJumpHeight>k__BackingField: 0
-  JumpSpeed: 0
-  <WallJumpSpeed>k__BackingField: 0
-  <WallLaunchSpeed>k__BackingField: 0
-  <DashSpeed>k__BackingField: 0
-  <DashCooldown>k__BackingField: 0
-  <InvulnTime>k__BackingField: 0
-  <Friction>k__BackingField: 0
+  <Health>k__BackingField: 3

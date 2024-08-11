@@ -10,11 +10,13 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private string scene;
     [SerializeField] private GameObject _nextLevel;
     [SerializeField] private GameObject _currentLevel;
+    private PlayerController2D _playerController2D;
 
     private void Start()
     {
         _sceneHandler = FindObjectOfType<SceneHandler>();
         _sceneHandler.SceneChange += NextScene;
+        _playerController2D = FindObjectOfType<PlayerController2D>();
     }
 
 
@@ -27,6 +29,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            _playerController2D.RecalculateHealth();
             NextLevel();
         }
     }

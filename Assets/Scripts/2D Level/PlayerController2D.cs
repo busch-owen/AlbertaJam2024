@@ -23,8 +23,7 @@ public class PlayerController2D : MonoBehaviour
     private float _vertical;
     private bool _isRight;
     private Projectile _projectile;
-    public float currentHealth;
-    private EnergyCounter _energyCounter;
+    private HpCounter _hpCounter;
     [SerializeField] private CharacterStatsSO characterStats;
     [SerializeField]protected string currentScene;
     private PlayerEventManager _eventManager;
@@ -45,7 +44,7 @@ public class PlayerController2D : MonoBehaviour
             //Flip();
         }
 
-        if (currentHealth <= 0)
+        if (_hpCounter.Health <= 0)
         {
             _isDead = true;
             _eventManager.RunPlayerDeath();
@@ -56,11 +55,14 @@ public class PlayerController2D : MonoBehaviour
     public void SceneChange()
     {
         _sceneHandler.RunSceneChange();
-        currentHealth = characterStats.Health;
-        _energyCounter = FindObjectOfType<EnergyCounter>();
-        _energyCounter.RecalculateEnergy((int)currentHealth);
+        _hpCounter.Health = (int)characterStats.Health;
+        _hpCounter = FindObjectOfType<HpCounter>();
     }
-
+    
+    public void RecalculateHealth()
+    {
+        _hpCounter.Health = (int)characterStats.Health;
+    }
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -71,9 +73,8 @@ public class PlayerController2D : MonoBehaviour
 
     private void Awake()
     {
-        currentHealth = characterStats.Health;
-        _energyCounter = FindObjectOfType<EnergyCounter>();
-        _energyCounter.RecalculateEnergy((int)currentHealth);
+        _hpCounter = FindObjectOfType<HpCounter>();
+        _hpCounter.Health = (int)characterStats.Health;
     }
 
 
@@ -118,8 +119,8 @@ public class PlayerController2D : MonoBehaviour
                 _lightFlicker.enabled = true;
             }
             _projectile = other.GetComponent<Projectile>();
-            currentHealth -=_projectile._damage;
-            _energyCounter.RecalculateEnergy((int)currentHealth);
+            _hpCounter.Health -= (int)_projectile._damage;
+           // _hpCounter.RecalculateHealth((int)currentHealth);
             if (!_isDead)
             {
                 _eventManager.RunPlayerHit();
