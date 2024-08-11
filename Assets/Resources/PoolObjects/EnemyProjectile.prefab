@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileLifetime: 3
-  _damage: 33
+  _damage: 1
   isEnemy: 1
 --- !u!212 &7053845895569587740
 SpriteRenderer:

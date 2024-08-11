@@ -14,7 +14,7 @@ public class LightFlicker : MonoBehaviour
     [SerializeField] private int NumberOfFlickers;
     private Screen _screen;
     private Canvas _canvas;
-    private EnergyCounter _energyCounter;
+    private HpCounter _hpCounter;
     
     
 
@@ -29,7 +29,7 @@ public class LightFlicker : MonoBehaviour
 
     private void Awake()
     {
-        _energyCounter = FindObjectOfType<EnergyCounter>();
+        _hpCounter = FindObjectOfType<HpCounter>();
 
     }
 
@@ -62,7 +62,7 @@ public class LightFlicker : MonoBehaviour
     {
         _screen.gameObject.SetActive(false);
         _canvas.gameObject.SetActive(false);
-        _energyCounter?.gameObject.SetActive(false);
+        _hpCounter?.gameObject.SetActive(false);
     }
 
     IEnumerator FlickerLights()
