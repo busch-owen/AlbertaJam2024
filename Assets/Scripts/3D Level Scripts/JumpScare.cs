@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JumpScare : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class JumpScare : MonoBehaviour
     private LightFlicker _flicker;
     [SerializeField] private float DisapearTime;
     [SerializeField]private GameObject _catMan;
+    [SerializeField] private string endScene;
 
     private void LightsOut()
     {
@@ -28,6 +30,7 @@ public class JumpScare : MonoBehaviour
         Invoke("Disapear", DisapearTime);
         Invoke("StartScare", 2.5f);
         Invoke("DisableCat", 4.5f);
+        Invoke("Restart", 5.5f);
         _animator.speed = 0.2f;
 
     }
@@ -35,6 +38,11 @@ public class JumpScare : MonoBehaviour
     private void DisableCat()
     {
         _catMan.SetActive(false);
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene(endScene);
     }
 
     private void Inital()

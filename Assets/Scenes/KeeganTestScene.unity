@@ -1582,6 +1582,7 @@ MonoBehaviour:
   _animator: {fileID: 1178873957}
   DisapearTime: 1
   _catMan: {fileID: 1178873956}
+  endScene: Title
 --- !u!4 &1416259363
 Transform:
   m_ObjectHideFlags: 0
