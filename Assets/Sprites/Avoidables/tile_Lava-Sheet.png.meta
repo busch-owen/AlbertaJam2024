@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 27bd08b6b8debdc4a8b2c72366432300
+guid: ad9ecc55bbeaf844d94c7ad2847b12a7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiles_Hell_0
+      name: tile_Lava-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7dc734dd37d6aa4696a8108d8b49bf3
-      internalID: 1673781212
+      spriteID: 4aa7c207ba9d55a4fa8b8c331ae7ee1d
+      internalID: -1734036595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Hell_1
+      name: tile_Lava-Sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 894ae957956fd774d8c7e4030b9c7c58
-      internalID: -1703193520
+      spriteID: 687abf1ceacd5284db503c382ab544f1
+      internalID: 400949403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Hell_2
+      name: tile_Lava-Sheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99da0cd9c4235b74c877651591acd202
-      internalID: -1563315268
+      spriteID: c3b71456442917d44b360d819822911d
+      internalID: -179495963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Hell_3
+      name: tile_Lava-Sheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9927b5cad6cb89a4a9af900f4e964869
-      internalID: 1451803790
+      spriteID: 9cbf0543e66e2374a8064f18c4569b83
+      internalID: -564665635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Hell_4
+      name: tile_Lava-Sheet_4
       rect:
         serializedVersion: 2
         x: 128
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd6213dff49f1674e8b4be0a1a3d58e3
-      internalID: -1265067993
+      spriteID: b977e904b62317c40a8fb59d08ba9671
+      internalID: -1440451404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Hell_5
+      name: tile_Lava-Sheet_5
       rect:
         serializedVersion: 2
         x: 160
@@ -216,71 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b803f419360e3be4cba38715cd39dae7
-      internalID: -1597170020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_Hell_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6b4073d8a8d5c649b9a6990a9e203f4
-      internalID: -1860816860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_Hell_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0849fa71ff51a8f429d450293ac23f5e
-      internalID: 1870726350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_Hell_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a8d1ad68710e9a40ab32d4818332e04
-      internalID: -2097893770
+      spriteID: 95a4cf614c6c48247b335d484f941666
+      internalID: -273268666
       vertices: []
       indices: 
       edges: []
@@ -288,7 +225,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fe1ed6241b72d0f4bb0c35491d53225b
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -296,15 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tiles_Hell_0: 1673781212
-      Tiles_Hell_1: -1703193520
-      Tiles_Hell_2: -1563315268
-      Tiles_Hell_3: 1451803790
-      Tiles_Hell_4: -1265067993
-      Tiles_Hell_5: -1597170020
-      Tiles_Hell_6: -1860816860
-      Tiles_Hell_7: 1870726350
-      Tiles_Hell_8: -2097893770
+      tile_Lava-Sheet_0: -1734036595
+      tile_Lava-Sheet_1: 400949403
+      tile_Lava-Sheet_2: -179495963
+      tile_Lava-Sheet_3: -564665635
+      tile_Lava-Sheet_4: -1440451404
+      tile_Lava-Sheet_5: -273268666
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
