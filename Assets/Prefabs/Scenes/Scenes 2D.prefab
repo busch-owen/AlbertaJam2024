@@ -6576,6 +6576,7 @@ GameObject:
   - component: {fileID: 6642709519446317947}
   - component: {fileID: 5333926759652787653}
   - component: {fileID: 479733916813752089}
+  - component: {fileID: 1744479384756071187}
   m_Layer: 0
   m_Name: 2DCamera
   m_TagString: Untagged
@@ -6705,11 +6706,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsGlobal: 1
+  m_IsGlobal: 0
   priority: 0
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 45cc9c0a82f64d04b97f3a10945295bc, type: 2}
+--- !u!65 &1744479384756071187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5078317839605288453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5749249553357667753
 GameObject:
   m_ObjectHideFlags: 0
