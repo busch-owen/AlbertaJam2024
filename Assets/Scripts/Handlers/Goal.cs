@@ -18,13 +18,17 @@ public class Goal : MonoBehaviour
     private Collectable[] _collectables;
     private Sprite _sprite;
     [SerializeField]private Sprite LightSprite;
+    public bool Light;
+    [SerializeField] private Animator _animator;
 
     private void Start()
     {
+        _animator = GetComponent<Animator>();
         _sprite = GetComponent<Sprite>();
         _sceneHandler = FindObjectOfType<SceneHandler>();
         _sceneHandler.SceneChange += NextScene;
         _playerController2D = FindObjectOfType<PlayerController2D>();
+        _animator.enabled = false;
     }
 
 
@@ -71,7 +75,9 @@ public class Goal : MonoBehaviour
         if (_inventoryController._inventory.GetAmount(ItemType.Fuse) > 0 &&
             _inventoryController._inventory.GetAmount(ItemType.Pliers) > 0)
         {
-            GetComponent<SpriteRenderer>().sprite = LightSprite;
+            //GetComponent<SpriteRenderer>().sprite = LightSprite;
+            _animator.enabled = true;
+            Light = true;
 
             //_sprite = LightSprite;
         }
