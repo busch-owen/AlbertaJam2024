@@ -86,6 +86,8 @@ public class GameManager : MonoBehaviour
                     _wiresHandler.Sparks.Play();
                     _eventManager.RunRandom();
                     Debug.Log("rand");
+                    AudioManager.Instance.PlaySFX("sSnip");
+                    AudioManager.Instance.PlayMusic("musSesame");
                     break;
                 }
                 case 1:
@@ -94,6 +96,8 @@ public class GameManager : MonoBehaviour
                     _fusesHandler.Sparks.Play();
                     _eventManager.RunRandom();
                     Debug.Log("rand");
+                    AudioManager.Instance.PlaySFX("sSnip");
+                    AudioManager.Instance.PlayMusic("musSesame");
                     break;
                 }
             }
@@ -151,6 +155,7 @@ public class GameManager : MonoBehaviour
             }
             gameStarted.Invoke();
             _gameStarted = true;
+            AudioManager.Instance.PlayMusic("musLoop");
         }
     }
 
