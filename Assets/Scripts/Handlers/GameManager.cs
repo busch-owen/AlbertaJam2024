@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] public UnityEvent gameStarted;
 
     private WiresHandler _wiresHandler;
+
+    [SerializeField] private float timeoutTime = 10f;
+    private WaitForSeconds _timeoutWaitForSeconds;
+    private bool _timeoutStarted;
     
     [SerializeField] private int minTime, maxTime;
 
@@ -36,7 +40,7 @@ public class GameManager : MonoBehaviour
         
         RandomizeWires();
         RandomizeBrokenFuse();
-        
+        _timeoutWaitForSeconds = new WaitForSeconds(timeoutTime);
         wiresCompleted.AddListener(CheckBothSystems);
         fusesCompleted.AddListener(CheckBothSystems);
         _eventManager = FindObjectOfType<PlayerEventManager>();
@@ -52,6 +56,8 @@ public class GameManager : MonoBehaviour
         {
             _wiresFixed = true;
             wiresCompleted.Invoke();
+            StopCoroutine(Timeout());
+            _timeoutStarted = false;
         }
     }
 
@@ -59,6 +65,12 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
+            if (_gameStarted)
+            {
+                
+                if(_timeoutStarted) continue;
+                StartCoroutine(Timeout());
+            }
             var timeUntilNextMalfunction = Random.Range(minTime, maxTime);
             Debug.Log(timeUntilNextMalfunction);
             yield return new WaitForSeconds(timeUntilNextMalfunction);
@@ -98,13 +110,16 @@ public class GameManager : MonoBehaviour
         {
             connector.ResetConnections();
         }
-
+        int whichLight = 0;
         foreach (var connector in rightConnectors)
         {
+            
             var randColor = Random.Range(0, availableColors.Count);
             
             connector.ChangeColor(availableColors[randColor]);
+            _wiresHandler.LightRenderers[whichLight].material = _wiresHandler.LightMaterials[availableColors[randColor].GetHashCode()];
             availableColors.Remove(availableColors[randColor]);
+            whichLight++;
         }
         _wiresHandler.ResetWirePositions();
     }
@@ -125,6 +140,14 @@ public class GameManager : MonoBehaviour
             gameStarted.Invoke();
             _gameStarted = true;
         }
+    }
+
+    private IEnumerator Timeout()
+    {
+        _timeoutStarted = true;
+        yield return _timeoutWaitForSeconds;
+        _eventManager.RunPlayerDeath();
+        _timeoutStarted = false;
     }
 
     public void RandomizeBrokenFuse()
