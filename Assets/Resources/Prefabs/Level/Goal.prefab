@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2519837009666425805}
   - component: {fileID: 3778145200636322278}
   - component: {fileID: 93894669047709179}
+  - component: {fileID: 1236557230235612205}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -102,6 +103,10 @@ MonoBehaviour:
   _nextLevel: {fileID: 0}
   _currentLevel: {fileID: 0}
   _inventoryController: {fileID: 0}
+  isEnd: 0
+  EndScene: 
+  LightSprite: {fileID: -561730504, guid: a632ff0f17f83cd40bc1f963916ed879, type: 3}
+  Light: 0
 --- !u!61 &93894669047709179
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,3 +152,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.0944932}
   m_EdgeRadius: 0
+--- !u!95 &1236557230235612205
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3195400390358875876}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1608ffdee1c5e64b93a6f27583bad1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
