@@ -22,6 +22,7 @@ namespace DefaultNamespace
         public void ItemCollected(ItemType type)
         {
             ItemCollectedEvent?.Invoke(type);
+            Debug.Log(type);
         }        
     }
 
