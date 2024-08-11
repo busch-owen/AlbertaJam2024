@@ -32,13 +32,13 @@ public class HpCounter : MonoBehaviour
         for (int i = 0; i < _health; i++)
         {
             hpSprites[i].SetActive(true);
-            Debug.Log($"Hearts added at {i}");
+            //Debug.Log($"Hearts added at {i}");
         }
 
         for (int i = _health; i < hpSprites.Length; i++)
         {
             hpSprites[i].SetActive(false);
-            Debug.Log($"Hearts removed at {i}");
+            //Debug.Log($"Hearts removed at {i}");
             //change hearts here
         }
     }

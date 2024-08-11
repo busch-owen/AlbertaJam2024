@@ -22,8 +22,6 @@ public class ItemModel : ScriptableObject
 
     private void OnEnable()
     {
-        _sceneHandler = FindObjectOfType<SceneHandler>();
-        _sceneHandler.SceneChange += ResetCount;
         Amount = 0;
         Debug.Log(Amount);
     }

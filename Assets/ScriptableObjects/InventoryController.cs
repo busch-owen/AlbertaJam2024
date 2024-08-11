@@ -7,10 +7,17 @@ public class InventoryController : MonoBehaviour
 {
     [SerializeField] public Inventory _inventory;
     [SerializeField] private InventoryView _view;
+    [SerializeField] private ItemModel _item;
 
     void Start()
     {
         //_inventory.ItemCollectedEvent += ItemCollected;
+    }
+
+    public void InventoryReset(ItemModel item)
+    {
+        item.Amount = 0;
+        Debug.Log(item.Amount);
     }
 
     public void ItemCollected(ItemType itemType)
