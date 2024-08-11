@@ -55,7 +55,7 @@ public class PlayerController2D : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene(currentScene);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void Start()

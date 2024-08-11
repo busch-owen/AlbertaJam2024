@@ -19,6 +19,7 @@ public class WiresHandler : MonoBehaviour
     private GameManager _gameManager;
 
     [SerializeField] private LineRenderer topWire, middleWire, bottomWire;
+    private Vector3 _topWireStartPos, _middleWireStartPos, _bottomWireStartPos;
 
     private LineRenderer _selectedWire;
 
@@ -28,6 +29,9 @@ public class WiresHandler : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
         _leftConnectorLayer = LayerMask.GetMask("LeftConnector");
         _rightConnectorLayer = LayerMask.GetMask("RightConnector");
+        _topWireStartPos = topWire.GetPosition(0);
+        _middleWireStartPos = middleWire.GetPosition(0);
+        _bottomWireStartPos = bottomWire.GetPosition(0);
     }
 
     public void UpdateMousePos(Vector2 mousePos)
@@ -41,7 +45,6 @@ public class WiresHandler : MonoBehaviour
             if (_startConnector.ConnectedCorrectly) return;
             _selectedWire.SetPosition(1, hit.point);
         }
-
     }
     
     public void CheckConnector()
@@ -116,5 +119,22 @@ public class WiresHandler : MonoBehaviour
             _selectedWire.enabled = false;
             _selectedWire = null;
         }
+    }
+
+    private void DisableAllWires()
+    {
+        topWire.enabled = false;
+        middleWire.enabled = false;
+        bottomWire.enabled = false;
+    }
+
+    public void ResetWirePositions()
+    {
+        topWire.SetPosition(0, _topWireStartPos);
+        topWire.SetPosition(1, _topWireStartPos);
+        middleWire.SetPosition(0, _middleWireStartPos);
+        middleWire.SetPosition(1, _middleWireStartPos);
+        bottomWire.SetPosition(0, _bottomWireStartPos);
+        bottomWire.SetPosition(1, _bottomWireStartPos);
     }
 }
