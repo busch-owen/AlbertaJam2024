@@ -7,6 +7,7 @@ public class ItemModel : ScriptableObject
 {
     public event Action<int> AmountChangeEvent;
     private int _amount;
+    [SerializeField]private SceneHandler _sceneHandler;
     [field:SerializeField] public ItemType Type { get; private set; }
     public int Amount
     {
@@ -16,6 +17,20 @@ public class ItemModel : ScriptableObject
             _amount = value;
             AmountChangeEvent?.Invoke(_amount);
         }
+    }
+    
+
+    private void OnEnable()
+    {
+        _sceneHandler = FindObjectOfType<SceneHandler>();
+        _sceneHandler.SceneChange += ResetCount;
+        Amount = 0;
+        Debug.Log(Amount);
+    }
+
+    public void ResetCount()
+    {
+        Amount = 0;
     }
 }
 
