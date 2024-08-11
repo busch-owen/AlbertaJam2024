@@ -23,11 +23,16 @@ public class LightFlicker : MonoBehaviour
         _eventManager = FindObjectOfType<PlayerEventManager>();
         _screen = FindObjectOfType<Screen>();
         _canvas = FindObjectOfType<Canvas>();
-        _energyCounter = FindObjectOfType<EnergyCounter>();
         _eventManager.PlayerHit += LightFLicker;
         _eventManager.PlayerDeath += LightsOff;
     }
-    
+
+    private void Awake()
+    {
+        _energyCounter = FindObjectOfType<EnergyCounter>();
+
+    }
+
 
     public void LightFLicker()
     {

@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void _Random();
+
 public class Canvas : MonoBehaviour
 {
     [SerializeField] private GameObject _Level;
     private GameManager _gameManager;
     [SerializeField] private GameObject _enemy;
+    private PlayerEventManager _eventManager;
 
     public void TurnOn()
     {
@@ -20,12 +23,21 @@ public class Canvas : MonoBehaviour
             _enemy.SetActive(true);
     }
 
+    public void TurnOff()
+    {
+        _Level.SetActive(false);
+        if(_enemy)
+            _enemy.SetActive(false);
+    }
+
     public void Awake()
     {
+        _eventManager = FindObjectOfType<PlayerEventManager>();
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
         _enemy.SetActive(false);
         _Level.SetActive(false);
         _gameManager = FindObjectOfType<GameManager>();
         _gameManager.gameStarted.AddListener(TurnOn);
+        _eventManager.Random += TurnOff;
     }
 }

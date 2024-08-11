@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     private bool _wiresFixed = false;
 
     private bool _gameStarted;
+
+    private PlayerEventManager _eventManager;
     
     [SerializeField] private UnityEvent wiresCompleted;
     [SerializeField] private UnityEvent fusesCompleted;
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
         
         wiresCompleted.AddListener(CheckBothSystems);
         fusesCompleted.AddListener(CheckBothSystems);
+        _eventManager = FindObjectOfType<PlayerEventManager>();
     }
 
     public void CheckWireCompletion()
@@ -63,11 +66,13 @@ public class GameManager : MonoBehaviour
                 case 0:
                 {
                     RandomizeWires();
+                    _eventManager.RunRandom();
                     break;
                 }
                 case 1:
                 {
                     RandomizeBrokenFuse();
+                    _eventManager.RunRandom();
                     break;
                 }
             }

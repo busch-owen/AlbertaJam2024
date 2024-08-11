@@ -28,4 +28,16 @@ public class PlayerEventManager : MonoBehaviour
     {
         PlayerHit?.Invoke();
     }
+
+    public event _Random Random;
+
+    public void RunRandom()
+    {
+        InvokeRandom();
+    }
+
+    protected virtual void InvokeRandom()
+    {
+        Random?.Invoke();
+    }
 }
