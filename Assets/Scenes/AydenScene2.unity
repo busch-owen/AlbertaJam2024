@@ -5569,6 +5569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8976154931556790967, guid: 09ecce13cfc285142a401f8d486d6c42,
         type: 3}
+      propertyPath: maxTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976154931556790967, guid: 09ecce13cfc285142a401f8d486d6c42,
+        type: 3}
       propertyPath: fuses.Array.data[0]
       value: 
       objectReference: {fileID: 142983069}
