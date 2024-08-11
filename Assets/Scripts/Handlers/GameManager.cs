@@ -24,13 +24,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UnityEvent fusesCompleted;
     [SerializeField] private UnityEvent gameStarted;
 
+    private WiresHandler _wiresHandler;
+    
     [SerializeField] private int minTime, maxTime;
 
     private void Start()
     {
+        _wiresHandler = FindObjectOfType<WiresHandler>();
+        
         RandomizeWires();
         RandomizeBrokenFuse();
-
+        
         wiresCompleted.AddListener(CheckBothSystems);
         fusesCompleted.AddListener(CheckBothSystems);
     }
@@ -93,6 +97,7 @@ public class GameManager : MonoBehaviour
             connector.ChangeColor(availableColors[randColor]);
             availableColors.Remove(availableColors[randColor]);
         }
+        _wiresHandler.ResetWirePositions();
     }
     
     public void CheckFuseCompletion()

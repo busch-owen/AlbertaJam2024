@@ -8,4 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/AydenScene.unity
+    guid: 4c4417cc55ca1924b9334d387e619245
+  - enabled: 1
+    path: Assets/Scenes/AydenScene2.unity
+    guid: a62f08a6d3e6d1a4c97eed578b61cf82
+  - enabled: 1
+    path: Assets/Scenes/AydenTestScene.unity
+    guid: 3ff49a8f7e4e01b4a87163ef9c16a6a4
+  - enabled: 1
+    path: Assets/Scenes/KeeganTestScene.unity
+    guid: feb0a9fb640615e44ba733e4e2d6cda4
+  - enabled: 1
+    path: Assets/Scenes/OwenTestScene.unity
+    guid: 78a4d7fc4e61dee4faad1760ab6d4a02
+  - enabled: 1
+    path: Assets/Scenes/OwenTestScene2.unity
+    guid: e9546f7b05c32d5408fd7f7e3c3f39c2
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 147954542f0a62d428963fa5f4cb8e04
   m_configObjects: {}
