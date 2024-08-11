@@ -26,6 +26,8 @@ public class WiresHandler : MonoBehaviour
     private Vector3 _topWireStartPos, _middleWireStartPos, _bottomWireStartPos;
 
     private LineRenderer _selectedWire;
+    
+    [field: SerializeField] public ParticleSystem Sparks { get; private set; }
 
     private void Awake()
     {
