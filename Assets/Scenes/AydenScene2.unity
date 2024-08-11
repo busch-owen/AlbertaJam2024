@@ -1277,6 +1277,7 @@ GameObject:
   - component: {fileID: 344107113}
   - component: {fileID: 344107112}
   - component: {fileID: 344107111}
+  - component: {fileID: 344107114}
   m_Layer: 0
   m_Name: Goal (1)
   m_TagString: Untagged
@@ -1363,6 +1364,8 @@ MonoBehaviour:
   isEnd: 1
   EndScene: Title
   LightSprite: {fileID: 0}
+  Light: 0
+  _animator: {fileID: 0}
 --- !u!212 &344107113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1415,6 +1418,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &344107114
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344107109}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1608ffdee1c5e64b93a6f27583bad1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &394596522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,12 +2346,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: b23710d926b7efe4baf856d06d2fe10e, type: 2}
   inventory: {fileID: 11400000, guid: 3eed975b80f0d564a8719cf6f4f19790, type: 2}
---- !u!1 &716057313 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3195400390358875876, guid: 30e2798ddb44f01489a1cb15d39ecc80,
-    type: 3}
-  m_PrefabInstance: {fileID: 2339049550959092413}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730347488
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,6 +4703,7 @@ GameObject:
   - component: {fileID: 1010425086}
   - component: {fileID: 1010425085}
   - component: {fileID: 1010425084}
+  - component: {fileID: 1010425087}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -4771,6 +4790,8 @@ MonoBehaviour:
   isEnd: 0
   EndScene: Title
   LightSprite: {fileID: -561730504, guid: a632ff0f17f83cd40bc1f963916ed879, type: 3}
+  Light: 0
+  _animator: {fileID: 0}
 --- !u!212 &1010425086
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4823,6 +4844,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1010425087
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010425082}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1608ffdee1c5e64b93a6f27583bad1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1029946691
 GameObject:
   m_ObjectHideFlags: 0
@@ -5579,6 +5621,7 @@ GameObject:
   - component: {fileID: 1214161947}
   - component: {fileID: 1214161946}
   - component: {fileID: 1214161945}
+  - component: {fileID: 1214161948}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -5665,6 +5708,8 @@ MonoBehaviour:
   isEnd: 0
   EndScene: Title
   LightSprite: {fileID: -561730504, guid: a632ff0f17f83cd40bc1f963916ed879, type: 3}
+  Light: 0
+  _animator: {fileID: 0}
 --- !u!212 &1214161947
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5717,6 +5762,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1214161948
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214161943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1608ffdee1c5e64b93a6f27583bad1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1215344032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5028129368294994349, guid: 2893ca185a53c4c48a20c5022dc34906,
@@ -15357,6 +15423,8 @@ MonoBehaviour:
   isEnd: 0
   EndScene: Title
   LightSprite: {fileID: -561730504, guid: a632ff0f17f83cd40bc1f963916ed879, type: 3}
+  Light: 0
+  _animator: {fileID: 0}
 --- !u!50 &1705835239183416202
 Rigidbody2D:
   serializedVersion: 4
@@ -15751,6 +15819,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 605187556203153739}
     m_Modifications:
+    - target: {fileID: 1236557230235612205, guid: 30e2798ddb44f01489a1cb15d39ecc80,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1283253894812742096, guid: 30e2798ddb44f01489a1cb15d39ecc80,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15808,6 +15881,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778145200636322278, guid: 30e2798ddb44f01489a1cb15d39ecc80,
         type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 5594985737467524911}
+    - target: {fileID: 3778145200636322278, guid: 30e2798ddb44f01489a1cb15d39ecc80,
+        type: 3}
       propertyPath: _nextLevel
       value: 
       objectReference: {fileID: 1160180299128011143}
@@ -15824,11 +15902,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3195400390358875876, guid: 30e2798ddb44f01489a1cb15d39ecc80,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5594985737467524911}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30e2798ddb44f01489a1cb15d39ecc80, type: 3}
 --- !u!1001 &2435198224913218217
 PrefabInstance:
@@ -16449,6 +16523,7 @@ GameObject:
   - component: {fileID: 1161004334375676062}
   - component: {fileID: 1638074708942619492}
   - component: {fileID: 1583100253805283528}
+  - component: {fileID: 3726622388795335288}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -16456,6 +16531,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &3726622388795335288
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3726622388795335287}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1608ffdee1c5e64b93a6f27583bad1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3763200869567734195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17290,27 +17386,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2339049550959092413}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &5594985737467524911
+--- !u!95 &5594985737467524911 stripped
 Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1236557230235612205, guid: 30e2798ddb44f01489a1cb15d39ecc80,
+    type: 3}
+  m_PrefabInstance: {fileID: 2339049550959092413}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716057313}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f1608ffdee1c5e64b93a6f27583bad1a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5650839694845794461
 GameObject:
   m_ObjectHideFlags: 0
