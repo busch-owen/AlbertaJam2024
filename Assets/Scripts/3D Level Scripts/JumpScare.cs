@@ -14,7 +14,7 @@ public class JumpScare : MonoBehaviour
 
     private void LightsOut()
     {
-        _light.SetActive(false);
+        _light.GetComponent<Light>().intensity = 0f;
     }
 
     private void Start()
