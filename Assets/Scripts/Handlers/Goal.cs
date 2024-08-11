@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Goal : MonoBehaviour
 {
     private SceneHandler _sceneHandler;
     [SerializeField] private string scene;

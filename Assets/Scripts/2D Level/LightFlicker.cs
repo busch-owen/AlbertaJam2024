@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LightFlicker : MonoBehaviour
 {
@@ -56,6 +57,8 @@ public class LightFlicker : MonoBehaviour
     {
         if(ScreenLight)
             ScreenLight.intensity = 0.5f;
+        
+        SceneManager.LoadScene("KeeganTestScene");
     }
 
     public void TurnOff()
