@@ -37,11 +37,11 @@ public class PlayerController2D : MonoBehaviour
         _rb.velocity = new Vector2(_horizontal * speed, _rb.velocity.y);
         if (_isRight && _horizontal > 0f)
         {
-            Flip();
+            //Flip();
         }
         if (_isRight && _horizontal < 0f)
         {
-            Flip();
+            //Flip();
         }
 
         if (currentHealth <= 0)
