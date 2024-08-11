@@ -57,8 +57,9 @@ public class PlayerController2D : MonoBehaviour
     public void SceneChange()
     {
         _sceneHandler.RunSceneChange();
-        _hpCounter.Health = (int)characterStats.Health;
         _hpCounter = FindObjectOfType<HpCounter>();
+        if(_hpCounter)
+            _hpCounter.Health = (int)characterStats.Health;
     }
     
     public void RecalculateHealth()
