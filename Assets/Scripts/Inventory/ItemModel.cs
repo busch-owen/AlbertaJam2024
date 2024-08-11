@@ -8,8 +8,6 @@ public class ItemModel : ScriptableObject
     public event Action<int> AmountChangeEvent;
     private int _amount;
     [field:SerializeField] public ItemType Type { get; private set; }
-    [field:SerializeField]
-    [field:SerializeField]
     public int Amount
     {
         get => _amount;

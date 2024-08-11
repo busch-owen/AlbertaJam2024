@@ -375,6 +375,7 @@ MonoBehaviour:
   gameStarted:
     m_PersistentCalls:
       m_Calls: []
+  timeoutTime: 20
   minTime: 10
   maxTime: 50
 --- !u!1 &7738679151464113047
