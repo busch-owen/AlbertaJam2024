@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int minTime, maxTime;
 
-    private void Awake()
+    private void Start()
     {
         RandomizeWires();
         RandomizeBrokenFuse();

@@ -28,8 +28,8 @@ public class Fuse : MonoBehaviour
 
     public void BreakFuse()
     {
-        IsBroken = true;
         _anim.SetBool(GoodFuse, false);
+        IsBroken = true;
     }
 
     public void Swap()
