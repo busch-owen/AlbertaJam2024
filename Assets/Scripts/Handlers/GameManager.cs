@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private UnityEvent wiresCompleted;
     [SerializeField] private UnityEvent fusesCompleted;
-    [SerializeField] private UnityEvent gameStarted;
+    [SerializeField] public UnityEvent gameStarted;
 
     [SerializeField] private int minTime, maxTime;
 
