@@ -70,6 +70,8 @@ public class GameManager : MonoBehaviour
                     RandomizeWires();
                     _eventManager.RunRandom();
                     Debug.Log("rand");
+                    AudioManager.Instance.PlaySFX("sSnip");
+                    AudioManager.Instance.PlayMusic("musSesame");
                     break;
                 }
                 case 1:
@@ -77,6 +79,8 @@ public class GameManager : MonoBehaviour
                     RandomizeBrokenFuse();
                     _eventManager.RunRandom();
                     Debug.Log("rand");
+                    AudioManager.Instance.PlaySFX("sSnip");
+                    AudioManager.Instance.PlayMusic("musSesame");
                     break;
                 }
             }
@@ -124,6 +128,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(RandomMalfunction());
             gameStarted.Invoke();
             _gameStarted = true;
+            AudioManager.Instance.PlayMusic("musLoop");
         }
     }
 
