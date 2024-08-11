@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 3886474996499744295}
   - component: {fileID: 7224503192212733337}
   - component: {fileID: 1816141148825682855}
+  - component: {fileID: 5408054881118806602}
   m_Layer: 0
   m_Name: 2DPlayer
   m_TagString: Untagged
@@ -186,7 +187,6 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 256
-  currentHealth: 0
   characterStats: {fileID: 11400000, guid: 7fbb6f9b18e663a4b9ce56902b949e2c, type: 2}
   currentScene: AydenTestScene
 --- !u!114 &3886474996499744295
@@ -229,6 +229,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5408054881118806602}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player_walk
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 63ebc107-ad9a-42b4-8fc2-83308219edda
     m_ActionName: 2D Movement/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
@@ -247,6 +259,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5408054881118806602}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player_jump
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 1c5552d8-8c64-4e84-b42f-f5ab242b0ef9
@@ -328,3 +352,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5200027, y: 0.925547}
   m_EdgeRadius: 0
+--- !u!95 &5408054881118806602
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7742363608884581060}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31c59791f2b85854ca17553f523754ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

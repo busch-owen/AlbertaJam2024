@@ -191,6 +191,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scenes 2D
       objectReference: {fileID: 0}
+    - target: {fileID: 1602722358867007086, guid: baccdab25c822a14f8fb59f52238fea2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1309016368, guid: cf89e363fe48f9648889da322915784c,
+        type: 3}
     - target: {fileID: 1882395365119916638, guid: baccdab25c822a14f8fb59f52238fea2,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -211,6 +217,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3066907207511455616, guid: baccdab25c822a14f8fb59f52238fea2,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 176e27bb40d595a41ad579d78ee4c117, type: 2}
     - target: {fileID: 7206371023228934630, guid: baccdab25c822a14f8fb59f52238fea2,
         type: 3}
       propertyPath: m_AnchorMax.y
