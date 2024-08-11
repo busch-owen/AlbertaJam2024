@@ -32,7 +32,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log(_inventoryController._inventory.Items[ItemType.Fuse].Amount);
-            if (_inventoryController._inventory.Items[ItemType.Fuse].Amount > 0)
+            if (_inventoryController._inventory.Items[ItemType.Fuse].Amount > 0 && _inventoryController._inventory.Items[ItemType.Pliers].Amount > 0)
             {
                 _playerController2D.RecalculateHealth();
                 NextLevel();
