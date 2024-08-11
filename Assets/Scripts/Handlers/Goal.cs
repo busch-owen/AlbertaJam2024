@@ -15,9 +15,13 @@ public class Goal : MonoBehaviour
     [SerializeField] private InventoryController _inventoryController;
     [SerializeField] private bool isEnd;
     [SerializeField] private string EndScene;
+    private Collectable[] _collectables;
+    private Sprite _sprite;
+    [SerializeField]private Sprite LightSprite;
 
     private void Start()
     {
+        _sprite = GetComponent<Sprite>();
         _sceneHandler = FindObjectOfType<SceneHandler>();
         _sceneHandler.SceneChange += NextScene;
         _playerController2D = FindObjectOfType<PlayerController2D>();
@@ -31,26 +35,47 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<PlayerController2D>())
         {
-            Debug.Log(_inventoryController._inventory.Items[ItemType.Fuse].Amount);
-            if (_inventoryController._inventory.Items[ItemType.Fuse].Amount > 0 && _inventoryController._inventory.Items[ItemType.Pliers].Amount > 0)
+            try
             {
-                _playerController2D.RecalculateHealth();
                 if (isEnd)
                 {
                     SceneManager.LoadScene(EndScene);
                 }
-                NextLevel();
+                if (_inventoryController._inventory.Items[ItemType.Fuse].Amount > 0 && _inventoryController._inventory.Items[ItemType.Pliers].Amount > 0)
+                {
+                    _playerController2D.RecalculateHealth();
+                    NextLevel();
+                }
             }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+                Debug.Log("you don't have all of the items you need");
+            }
+            
         }
     }
 
     private void NextLevel()
     {
-        _nextLevel.SetActive(true);
         _currentLevel.SetActive(false);
+        _nextLevel.SetActive(true);
+        _collectables = FindObjectsByType<Collectable>(sortMode: FindObjectsSortMode.None);
+        _inventoryController._inventory.Items.Clear();
     }
-    
-    
+
+    private void FixedUpdate()
+    {
+        if (_inventoryController._inventory.GetAmount(ItemType.Fuse) > 0 &&
+            _inventoryController._inventory.GetAmount(ItemType.Pliers) > 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = LightSprite;
+
+            //_sprite = LightSprite;
+        }
+            
+
+    }
 }

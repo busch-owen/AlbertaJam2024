@@ -25,10 +25,19 @@ namespace DefaultNamespace
         public void ItemCollected(ItemType type, ItemModel model)
         {
             Items.TryAdd(type,model);
-            InventoryController.ItemCollected(type);
+            Items[type].Amount++;
+            //InventoryController.ItemCollected(type);
             ItemCollectedEvent?.Invoke(type);
             
             Debug.Log(type);
+        }
+
+        public int GetAmount(ItemType type)
+        {
+           
+            if  (Items.ContainsKey(type))
+                return Items[type].Amount;
+            return 0;
         }
 
         public void AddItemAmount()

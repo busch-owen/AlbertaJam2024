@@ -9,15 +9,17 @@ public class Collectable : MonoBehaviour
     [SerializeField] public Inventory inventory;
     private InventoryController _inventoryController;
     private SceneHandler _sceneHandler;
+    private bool isCollected = false;
     public event Action<ItemType> collectedEvent;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<PlayerController2D>() && !isCollected)
         {
             //collectedEvent?.Invoke(item.Type);
             inventory.ItemCollected(item.Type, item);
             Debug.Log(item.Type);
+            isCollected = true;
             Destroy(this.gameObject);
         }
     }

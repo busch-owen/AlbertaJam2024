@@ -102,6 +102,9 @@ MonoBehaviour:
   _nextLevel: {fileID: 0}
   _currentLevel: {fileID: 0}
   _inventoryController: {fileID: 0}
+  isEnd: 0
+  EndScene: 
+  LightSprite: {fileID: -561730504, guid: a632ff0f17f83cd40bc1f963916ed879, type: 3}
 --- !u!61 &93894669047709179
 BoxCollider2D:
   m_ObjectHideFlags: 0
