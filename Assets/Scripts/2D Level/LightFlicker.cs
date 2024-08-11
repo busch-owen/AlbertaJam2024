@@ -7,7 +7,6 @@ public class LightFlicker : MonoBehaviour
 {
     public bool LightsOn;
     private PlayerEventManager _eventManager;
-    [SerializeField]private GameObject _gameObjects;
     [SerializeField]private float FlickerSpeed;
     [SerializeField] private Light _light;
     [SerializeField] private Light ScreenLight;
@@ -40,9 +39,12 @@ public class LightFlicker : MonoBehaviour
 
     public void LightsOff()
     {
-        _light.intensity = 0;
-        Invoke("TurnOff",1.0f);
-        Invoke("ScreenOff", 1.5f);
+        if (_light != null)
+        {
+            _light.intensity = 0;
+            Invoke("TurnOff",1.0f);
+            Invoke("ScreenOff", 1.5f);
+        }
     }
 
     public void ScreenOff()
