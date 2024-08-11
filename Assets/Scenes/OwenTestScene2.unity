@@ -9971,26 +9971,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3D Scene
       objectReference: {fileID: 0}
-    - target: {fileID: 967578664043851229, guid: 2893ca185a53c4c48a20c5022dc34906,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 967578664043851229, guid: 2893ca185a53c4c48a20c5022dc34906,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 967578664043851229, guid: 2893ca185a53c4c48a20c5022dc34906,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 967578664043851229, guid: 2893ca185a53c4c48a20c5022dc34906,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 287
-      objectReference: {fileID: 0}
     - target: {fileID: 1215277711413336889, guid: 2893ca185a53c4c48a20c5022dc34906,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -10198,23 +10178,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: EnableInput
       objectReference: {fileID: 0}
-    - target: {fileID: 6008798150769487614, guid: 2893ca185a53c4c48a20c5022dc34906,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: fa2df34709b650f4a8adf6acb92bf1a8,
-        type: 3}
     - target: {fileID: 6216962911616317351, guid: 2893ca185a53c4c48a20c5022dc34906,
         type: 3}
       propertyPath: m_Name
       value: MiddleFuse
       objectReference: {fileID: 0}
-    - target: {fileID: 6219192226765760888, guid: 2893ca185a53c4c48a20c5022dc34906,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: fa2df34709b650f4a8adf6acb92bf1a8,
-        type: 3}
     - target: {fileID: 6545085545961772850, guid: 2893ca185a53c4c48a20c5022dc34906,
         type: 3}
       propertyPath: m_Radius
@@ -10286,22 +10254,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.1909141
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722962123228675828, guid: 2893ca185a53c4c48a20c5022dc34906,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722962123228675828, guid: 2893ca185a53c4c48a20c5022dc34906,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a53bdfb1da5dece4d888c8fcb93daf84,
-        type: 3}
-    - target: {fileID: 7722962123228675828, guid: 2893ca185a53c4c48a20c5022dc34906,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.6117647
       objectReference: {fileID: 0}
     - target: {fileID: 7923258854768020642, guid: 2893ca185a53c4c48a20c5022dc34906,
         type: 3}
