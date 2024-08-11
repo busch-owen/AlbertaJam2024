@@ -49,7 +49,6 @@ public class PlayerController2D : MonoBehaviour
             _isDead = true;
             _eventManager.RunPlayerDeath();
             Invoke("SceneChange", 2.0f);
-            SceneManager.LoadScene(currentScene);
         }
     }
 

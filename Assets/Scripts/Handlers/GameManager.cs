@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
         {
             wiresCompleted.Invoke();
             _wiresFixed = true;
+            if (_gameStarted)
+            {
+                gameStarted.Invoke();
+            }
         }
     }
 
@@ -67,12 +71,14 @@ public class GameManager : MonoBehaviour
                 {
                     RandomizeWires();
                     _eventManager.RunRandom();
+                    Debug.Log("rand");
                     break;
                 }
                 case 1:
                 {
                     RandomizeBrokenFuse();
                     _eventManager.RunRandom();
+                    Debug.Log("rand");
                     break;
                 }
             }
@@ -114,6 +120,10 @@ public class GameManager : MonoBehaviour
         {
             fusesCompleted.Invoke();
             _fusesFixed = true;
+            if (_gameStarted)
+            {
+                gameStarted.Invoke();
+            }
         }
     }
 

@@ -11,10 +11,12 @@ public class Canvas : MonoBehaviour
     private GameManager _gameManager;
     [SerializeField] private GameObject _enemy;
     private PlayerEventManager _eventManager;
+    private Screen _screen;
 
     public void TurnOn()
     {
         _Level.SetActive(true);
+        _screen.enabled = true;
     }
 
     public void EnableEnemy()
@@ -25,6 +27,7 @@ public class Canvas : MonoBehaviour
 
     public void TurnOff()
     {
+        _screen.enabled = false;
         _Level.SetActive(false);
         if(_enemy)
             _enemy.SetActive(false);
@@ -32,6 +35,7 @@ public class Canvas : MonoBehaviour
 
     public void Awake()
     {
+        _screen = FindObjectOfType<Screen>();
         _eventManager = FindObjectOfType<PlayerEventManager>();
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
         _enemy.SetActive(false);
