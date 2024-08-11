@@ -17,6 +17,7 @@ public class WiresHandler : MonoBehaviour
     private WireConnector _endConnector;
 
     private GameManager _gameManager;
+    private InputHandler _inputHandler;
 
     [SerializeField] private LineRenderer topWire, middleWire, bottomWire;
     private Vector3 _topWireStartPos, _middleWireStartPos, _bottomWireStartPos;
@@ -27,6 +28,7 @@ public class WiresHandler : MonoBehaviour
     {
         _camera = Camera.main;
         _gameManager = FindObjectOfType<GameManager>();
+        _inputHandler = FindObjectOfType<InputHandler>();
         _leftConnectorLayer = LayerMask.GetMask("LeftConnector");
         _rightConnectorLayer = LayerMask.GetMask("RightConnector");
         _topWireStartPos = topWire.GetPosition(0);

@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     public void CheckWireCompletion()
     {
+        if (_wiresFixed) return;
+        
         var connectorsConnected = connectors.Count(connector => connector.ConnectedCorrectly);
 
         if (connectorsConnected == connectors.Length)
@@ -109,6 +111,7 @@ public class GameManager : MonoBehaviour
     
     public void CheckFuseCompletion()
     {
+        if (_fusesFixed) return;
         //Check for fuse completion here
         _fusesFixed = true;
         fusesCompleted.Invoke();
