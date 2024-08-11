@@ -30,6 +30,7 @@ public class PlayerController2D : MonoBehaviour
     private PlayerEventManager _eventManager;
     private LightFlicker _lightFlicker;
     private bool _isDead;
+    private SceneHandler _sceneHandler;
 
     private void Update()
     {
@@ -54,8 +55,10 @@ public class PlayerController2D : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene(currentScene);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _sceneHandler.RunSceneChange();
+        currentHealth = characterStats.Health;
+        _energyCounter = FindObjectOfType<EnergyCounter>();
+        _energyCounter.RecalculateEnergy((int)currentHealth);
     }
 
     private void Start()
@@ -63,6 +66,7 @@ public class PlayerController2D : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _eventManager = FindObjectOfType<PlayerEventManager>();
         _lightFlicker = FindObjectOfType<LightFlicker>();
+        _sceneHandler = FindObjectOfType<SceneHandler>();
     }
 
     private void Awake()

@@ -8,14 +8,21 @@ public delegate void _Random();
 public class Canvas : MonoBehaviour
 {
     [SerializeField] private GameObject _Level;
+    [SerializeField] private GameObject Scenes;
     private GameManager _gameManager;
     [SerializeField] private GameObject _enemy;
     private PlayerEventManager _eventManager;
     private Screen _screen;
+    private bool started;
 
     public void TurnOn()
     {
-        _Level.SetActive(true);
+        if (!started)
+        {
+            _Level.SetActive(true);
+            started = true;
+        }
+        Scenes.SetActive(true);
         _screen.enabled = true;
     }
 
@@ -28,7 +35,7 @@ public class Canvas : MonoBehaviour
     public void TurnOff()
     {
         _screen.enabled = false;
-        _Level.SetActive(false);
+        Scenes.SetActive(false);
         if(_enemy)
             _enemy.SetActive(false);
     }
