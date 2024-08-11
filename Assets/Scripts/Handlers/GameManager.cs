@@ -67,40 +67,39 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator RandomMalfunction()
     {
-        while (true)
+        var timeUntilNextMalfunction = Random.Range(minTime, maxTime);
+        Debug.Log(timeUntilNextMalfunction);
+        yield return new WaitForSeconds(timeUntilNextMalfunction);
+        if (_gameStarted)
         {
-            var timeUntilNextMalfunction = Random.Range(minTime, maxTime);
-            Debug.Log(timeUntilNextMalfunction);
-            yield return new WaitForSeconds(timeUntilNextMalfunction);
-            if (_gameStarted)
-            {
-                if(_timeoutStarted) continue;
+            if (!_timeoutStarted)
                 _timeoutCoroutine = StartCoroutine(Timeout());
-            }
-            var randEvent = Random.Range(0, 2);
-            switch (randEvent)
+        }
+
+        var randEvent = Random.Range(0, 2);
+        switch (randEvent)
+        {
+            case 0:
             {
-                case 0:
-                {
-                    RandomizeWires();
-                    _wiresHandler.Sparks.Play();
-                    _eventManager.RunRandom();
-                    Debug.Log("rand");
-                    AudioManager.Instance.PlaySFX("sSnip");
-                    AudioManager.Instance.PlayMusic("musSesame");
-                    break;
-                }
-                case 1:
-                {
-                    RandomizeBrokenFuse();
-                    _fusesHandler.Sparks.Play();
-                    _eventManager.RunRandom();
-                    Debug.Log("rand");
-                    AudioManager.Instance.PlaySFX("sSnip");
-                    AudioManager.Instance.PlayMusic("musSesame");
-                    break;
-                }
+                RandomizeWires();
+                _wiresHandler.Sparks.Play();
+                _eventManager.RunRandom();
+                Debug.Log("rand");
+                AudioManager.Instance.PlaySFX("sSnip");
+                AudioManager.Instance.PlayMusic("musSesame");
+                break;
             }
+            case 1:
+            {
+                RandomizeBrokenFuse();
+                _fusesHandler.Sparks.Play();
+                _eventManager.RunRandom();
+                Debug.Log("rand");
+                AudioManager.Instance.PlaySFX("sSnip");
+                AudioManager.Instance.PlayMusic("musSesame");
+                break;
+            }
+
         }
     }
 
