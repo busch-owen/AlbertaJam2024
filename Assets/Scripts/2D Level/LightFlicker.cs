@@ -62,7 +62,7 @@ public class LightFlicker : MonoBehaviour
     {
         _screen.gameObject.SetActive(false);
         _canvas.gameObject.SetActive(false);
-        _hpCounter.gameObject.SetActive(false);
+        _energyCounter?.gameObject.SetActive(false);
     }
 
     IEnumerator FlickerLights()

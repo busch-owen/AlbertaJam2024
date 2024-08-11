@@ -44,16 +44,14 @@ public class GameManager : MonoBehaviour
 
     public void CheckWireCompletion()
     {
+        if (_wiresFixed) return;
+        
         var connectorsConnected = connectors.Count(connector => connector.ConnectedCorrectly);
 
         if (connectorsConnected == connectors.Length)
         {
-            wiresCompleted.Invoke();
             _wiresFixed = true;
-            if (_gameStarted)
-            {
-                gameStarted.Invoke();
-            }
+            wiresCompleted.Invoke();
         }
     }
 
@@ -113,23 +111,15 @@ public class GameManager : MonoBehaviour
     
     public void CheckFuseCompletion()
     {
+        if (_fusesFixed) return;
         //Check for fuse completion here
-        var fusesFixed = fuses.Count(fuse => !fuse.IsBroken);
-
-        if (fusesFixed == fuses.Length)
-        {
-            fusesCompleted.Invoke();
-            _fusesFixed = true;
-            if (_gameStarted)
-            {
-                gameStarted.Invoke();
-            }
-        }
+        _fusesFixed = true;
+        fusesCompleted.Invoke();
     }
 
     private void CheckBothSystems()
     {
-        if (_fusesFixed && _wiresFixed && !_gameStarted)
+        if (_fusesFixed && _wiresFixed)
         {
             StartCoroutine(RandomMalfunction());
             gameStarted.Invoke();
