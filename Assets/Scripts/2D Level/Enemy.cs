@@ -128,14 +128,11 @@ public class Enemy : MonoBehaviour
 
         if (canShoot && isRight)
         {
-            Debug.Log("shoot");
             _weapon.Shoot(this.transform.right);
-            
         }
 
         if (canShoot && isLeft)
         {
-            Debug.Log("shoot");
             _weapon.Shoot(-this.transform.right);
         }
         
