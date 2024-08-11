@@ -109,7 +109,6 @@ public class PlayerController2D : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("move");
         _horizontal = context.ReadValue<Vector2>().x;
     }
     
@@ -123,7 +122,6 @@ public class PlayerController2D : MonoBehaviour
             }
             _projectile = other.GetComponent<Projectile>();
             _hpCounter.Health -= (int)_projectile._damage;
-           // _hpCounter.RecalculateHealth((int)currentHealth);
             if (!_isDead)
             {
                 _eventManager.RunPlayerHit();
