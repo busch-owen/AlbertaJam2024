@@ -4,7 +4,7 @@ using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
 public enum ItemType{
-    Points, Spinach, Fuse
+    Points, Spinach, Fuse, Pliers,
 }
 namespace DefaultNamespace
 {
