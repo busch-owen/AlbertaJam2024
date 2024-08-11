@@ -23,6 +23,7 @@ public class Projectile : PoolObject
         {
             CancelInvoke();
             OnDeSpawn();
+            AudioManager.Instance.PlaySFX("sFuny");
         }
     }
 }
