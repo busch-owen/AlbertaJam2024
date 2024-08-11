@@ -98,13 +98,16 @@ public class GameManager : MonoBehaviour
         {
             connector.ResetConnections();
         }
-
+        int whichLight = 0;
         foreach (var connector in rightConnectors)
         {
+            
             var randColor = Random.Range(0, availableColors.Count);
             
             connector.ChangeColor(availableColors[randColor]);
+            _wiresHandler.LightRenderers[whichLight].material = _wiresHandler.LightMaterials[availableColors[randColor].GetHashCode()];
             availableColors.Remove(availableColors[randColor]);
+            whichLight++;
         }
         _wiresHandler.ResetWirePositions();
     }

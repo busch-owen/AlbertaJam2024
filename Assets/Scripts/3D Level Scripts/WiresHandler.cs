@@ -19,6 +19,9 @@ public class WiresHandler : MonoBehaviour
     private GameManager _gameManager;
     private InputHandler _inputHandler;
 
+    [field: SerializeField] public MeshRenderer[] LightRenderers { get; private set; }
+    [field: SerializeField] public Material[] LightMaterials { get; private set; }
+
     [SerializeField] private LineRenderer topWire, middleWire, bottomWire;
     private Vector3 _topWireStartPos, _middleWireStartPos, _bottomWireStartPos;
 
