@@ -13,6 +13,8 @@ public class Goal : MonoBehaviour
     [SerializeField] private GameObject _currentLevel;
     private PlayerController2D _playerController2D;
     [SerializeField] private InventoryController _inventoryController;
+    [SerializeField] private bool isEnd;
+    [SerializeField] private string EndScene;
 
     private void Start()
     {
@@ -35,6 +37,10 @@ public class Goal : MonoBehaviour
             if (_inventoryController._inventory.Items[ItemType.Fuse].Amount > 0 && _inventoryController._inventory.Items[ItemType.Pliers].Amount > 0)
             {
                 _playerController2D.RecalculateHealth();
+                if (isEnd)
+                {
+                    SceneManager.LoadScene(EndScene);
+                }
                 NextLevel();
             }
         }
