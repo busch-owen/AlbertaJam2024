@@ -48,7 +48,7 @@ MonoBehaviour:
   - name: musLoop
     clip: {fileID: 8300000, guid: dba0bf032fea1b7478427e71a8d5a471, type: 3}
   - name: musSesame
-    clip: {fileID: 8300000, guid: 774709a095016b040807abb680495581, type: 3}
+    clip: {fileID: 8300000, guid: 40acd5caeeb6c0048a67bdd26d334168, type: 3}
   sfxSounds:
   - name: sClick
     clip: {fileID: 8300000, guid: 98475538ebb953f4f92834b2803e5050, type: 3}

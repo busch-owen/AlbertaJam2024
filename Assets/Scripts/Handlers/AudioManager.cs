@@ -23,6 +23,7 @@ public class AudioManager : Singleton<AudioManager>
     public void PlaySFX(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name); 
+        Debug.Log($"Asked to play {name}");
         if (s == null)
         {
             Debug.Log(sfxSounds + name);
