@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -18,24 +17,26 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float _groundCheckDistance;
     [SerializeField] private Transform _groundCheck;
-    [SerializeField]private LayerMask _layerMask;
+    [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private int changeTimer;
     private float _horizontal;
     private float _vertical;
     private bool _isRight;
     private Projectile _projectile;
     private HpCounter _hpCounter;
     [SerializeField] private CharacterStatsSO characterStats;
-    [SerializeField]protected string currentScene;
+    [SerializeField] protected string currentScene;
     private PlayerEventManager _eventManager;
     private LightFlicker _lightFlicker;
     private bool _isDead;
     private bool _sfxHack = false;
     private SceneHandler _sceneHandler;
+    
 
     private void Update()
     {
-
-        _rb.velocity = new Vector2(_horizontal * speed, _rb.velocity.y);
+        //Code Review : Useless Function is still being used :)
+        /*_rb.velocity = new Vector2(_horizontal * speed, _rb.velocity.y);
         if (_isRight && _horizontal > 0f)
         {
             //Flip();
@@ -43,14 +44,20 @@ public class PlayerController2D : MonoBehaviour
         if (_isRight && _horizontal < 0f)
         {
             //Flip();
-        }
-
+        }*/
+        
+        //Personal Whine, I would prefer if we could have had Sesame throw a heart instead of just resetting every
+        //health var
+        
         if (_hpCounter.Health <= 0)
         {
             _isDead = true;
             _eventManager.RunPlayerDeath();
-            AudioManager.Instance.PlaySFX("sMeow");
-            Invoke("SceneChange", 2.0f);
+            //AudioManager.Instance.PlaySFX("sMeow");
+            // Code Review : Tie the scene change to a variable! Also i tied the sound effect to update which is why 
+            // it sucked so bad
+            // This running on update probably gave us some hassle
+            Invoke("SceneChange", changeTimer);
         }
     }
 
@@ -65,6 +72,7 @@ public class PlayerController2D : MonoBehaviour
     public void RecalculateHealth()
     {
         _hpCounter.Health = (int)characterStats.Health;
+        
     }
     private void Start()
     {
@@ -86,21 +94,21 @@ public class PlayerController2D : MonoBehaviour
         return Physics2D.OverlapCircle(_groundCheck.position, _groundCheckDistance, _layerMask);
     }
 
-    private void Flip()
+   /*private void Flip()
     {
         _isRight = !_isRight;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
-    }
-
+    }*/
+    
     public void Jump(InputAction.CallbackContext context)
     {
         if (context.performed && IsGrounded())
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpHeight);
         }
-
+        
         if (context.canceled && _rb.velocity.y > 0f)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, _rb.velocity.y * 0.5f);
