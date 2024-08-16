@@ -49,7 +49,7 @@ public class Goal : MonoBehaviour
                 }
                 if (_inventoryController._inventory.Items[ItemType.Fuse].Amount > 0 && _inventoryController._inventory.Items[ItemType.Pliers].Amount > 0)
                 {
-                    _playerController2D.RecalculateHealth();
+                    _playerController2D.RestoreHealth();
                     NextLevel();
                 }
             }

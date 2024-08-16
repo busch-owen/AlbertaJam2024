@@ -48,16 +48,18 @@ public class PlayerController2D : MonoBehaviour
         
         //Personal Whine, I would prefer if we could have had Sesame throw a heart instead of just resetting every
         //health var
-        
+
         if (_hpCounter.Health <= 0)
         {
+            if (_isDead == false)
+            {_eventManager.RunPlayerDeath();
+                AudioManager.Instance.PlaySFX("sMeow");
+                // Code Review : Tie the scene change to a variable! Also i tied the sound effect to update which is why 
+                // it sucked so bad
+                // This running on update probably gave us some hassle
+                // added extra "If" to avoid multiple calls of death, which is awful but works
+                Invoke("SceneChange", changeTimer);}
             _isDead = true;
-            _eventManager.RunPlayerDeath();
-            //AudioManager.Instance.PlaySFX("sMeow");
-            // Code Review : Tie the scene change to a variable! Also i tied the sound effect to update which is why 
-            // it sucked so bad
-            // This running on update probably gave us some hassle
-            Invoke("SceneChange", changeTimer);
         }
     }
 
@@ -69,7 +71,8 @@ public class PlayerController2D : MonoBehaviour
             _hpCounter.Health = (int)characterStats.Health;
     }
     
-    public void RecalculateHealth()
+    // renamed to RestoreHealth for readability
+    public void RestoreHealth()
     {
         _hpCounter.Health = (int)characterStats.Health;
         
